@@ -1,0 +1,133 @@
+#:kivy 2.3
+<InvOptions>:
+    BoxLayout:
+        id: spells
+        orientation: 'vertical'
+        size: 600, 100
+        pos: root.pos
+        padding: 10
+
+        Button:
+            id: use
+            text: 'Use'
+            background_normal: ''
+            background_color: 0, 0, 0, 0.5
+            opacity: 1 if root.is_spell else 0
+            disabled: not root.is_spell
+            #size: root.size
+            #pos: root.pos
+            on_press: root.use()
+
+        Button:
+            id: info
+            text: 'Info'
+            background_normal: ''
+            background_color: 0, 0, 0, 0.5
+            #size: root.size
+            #pos: root.pos
+            on_press: root.info()
+
+        Button:
+            id: discart
+            text: 'Discart'
+            background_normal: ''
+            background_color: 0, 0, 0, 0.5
+            #size: root.size
+            #pos: root.pos
+            on_press: root.discart()
+
+<Inventory>:
+    orientation: 'vertical'
+
+    FloatLayout:
+        id: layout
+        size_hint: None, None
+        size: root.width, root.height
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        GridLayout:
+            cols: 5
+            rows: 2
+            spacing: 10
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            InventorySlot:
+                id: inv1
+                size_hint: 1, 1
+            InventorySlot:
+                id: inv2
+                size_hint: 1, 1
+            InventorySlot:
+                id: inv3
+                size_hint: 1, 1
+            InventorySlot:
+                id: inv4
+                size_hint: 1, 1
+            InventorySlot:
+                id: inv5
+                size_hint: 1, 1
+            InventorySlot:
+                id: inv6
+                size_hint: 1, 1
+            InventorySlot:
+                id: inv7
+                size_hint: 1, 1
+            InventorySlot:
+                id: inv8
+                size_hint: 1, 1
+            InventorySlot:
+                id: inv9
+                size_hint: 1, 1
+            InventorySlot:
+                id: inv10
+                size_hint: 1, 1
+        GridLayout:
+            id: itens
+            cols: 5
+            rows: 2
+            spacing: 10
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            ItemSlot:
+                slot_id: 1
+                id: item1
+                size_hint: 1, 1
+            ItemSlot:
+                slot_id: 2
+                id: item2
+                size_hint: 1, 1
+            ItemSlot:
+                slot_id: 3
+                id: item3
+                size_hint: 1, 1
+            ItemSlot:
+                slot_id: 4
+                id: item4
+                size_hint: 1, 1
+            ItemSlot:
+                slot_id: 5
+                id: item5
+                size_hint: 1, 1
+            ItemSlot:
+                slot_id: 6
+                id: item6
+                size_hint: 1, 1
+            ItemSlot:
+                slot_id: 7
+                id: item7
+                size_hint: 1, 1
+            ItemSlot:
+                slot_id: 8
+                id: item8
+                size_hint: 1, 1
+            ItemSlot:
+                slot_id: 9
+                id: item9
+                size_hint: 1, 1
+            ItemSlot:
+                slot_id: 10
+                id: item10
+                size_hint: 1, 1
+        
+        InvOptions:
+            id: menu
+            opacity: 1 if self.visible else 0

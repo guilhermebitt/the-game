@@ -1,0 +1,135 @@
+#:kivy 2.3
+<PlayerStats>:
+    cols: 1
+    spacing: 5
+    
+    BoxLayout:
+        orientation: 'horizontal'
+        XImage:
+            id: life_icon
+            source:'assets/hud/heart.png'
+            size: self.texture_size
+            size_hint: None, 1
+            width: 50
+            height: 50
+            background_color: 0, 0, 0, 0
+        FloatLayout:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            XProgressBar:
+            # Player Life
+                id: life_bar
+                max: 100
+                value: 100
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                bar_color: 1, 0.3, 0.2, 1
+            BackgroundLabel:
+                id: life_txt
+                text: '100/100'
+                font_size: 25
+                color: 0, 0, 0, 1
+                bold: True
+                size_hint: 1, 1
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    
+    BoxLayout:
+        orientation: 'horizontal'
+        XImage:
+            id: ap_icon
+            source:'assets/hud/mana.png'
+            size: self.texture_size
+            size_hint: None, 1
+            width: 100
+            height: 100
+            background_color: 0, 0, 0, 0
+        FloatLayout:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            XProgressBar:
+            # Player ActionPoints
+                id: ap_bar
+                max: 100
+                value: 100
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                bar_color: 0.2, 0.6, 1, 1
+            BackgroundLabel:
+                id: ap_txt
+                text: '50/50'
+                font_size: 25
+                color: 0, 0, 0, 1
+                bold: True
+                size_hint: 1, 1
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    
+    BoxLayout:
+        orientation: 'horizontal'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            XImage:
+                id: atk_icon
+                source:'assets/hud/sword.png'
+                size: self.texture_size
+                size_hint: None, 1
+                width: 50
+                height: 50
+                background_color: 0, 0, 0, 0
+            Label:
+                id: atk_lbl
+                font_size: 25
+                text: '10'  # Player Attack
+                text_size: self.size
+                halign: 'left'
+                valign: 'center'
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            XImage:
+                id: deff_icon
+                source:'assets/hud/shield.png'  #shield
+                size: self.texture_size
+                size_hint: None, 1
+                width: 50
+                height: 50
+                background_color: 0, 0, 0, 0
+            Label:
+                id: deff_lbl
+                font_size: 25
+                text: '5'  # Player Defense
+                text_size: self.size
+                halign: 'left'
+                valign: 'center'
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            XImage:
+                id: moves_icon
+                source:'assets/hud/mana.png'
+                size: self.texture_size
+                size_hint: None, 1
+                width: 50
+                height: 50
+                background_color: 0, 0, 0, 0
+            Label:
+                id: moves
+                font_size: 25
+                text: '2'  # Player Moves
+                text_size: self.size
+                halign: 'left'
+                valign: 'center'
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            XImage:
+                id: coin_icon
+                source:'assets/hud/coin.png'
+                size: self.texture_size
+                size_hint: None, 1
+                width: 50
+                height: 50
+                background_color: 0, 0, 0, 0
+            Label:
+                id: coin
+                font_size: 25
+                text: '0'  # Player Coins
+                text_size: self.size
+                halign: 'left'
+                valign: 'center'

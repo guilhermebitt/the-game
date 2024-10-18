@@ -1,0 +1,126 @@
+#:kivy 2.3
+<EnemyStats>:
+    #This layout sepairs the image and the stats (enemy)
+    orientation: 'vertical'
+    spacing: 10
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        FloatLayout:
+            size_hint: 1, 1
+            size: root.width, root.height
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                size_hint: 1, 1
+                XImage:
+                    id: background_img
+                    source: 'assets/images/interrogation_point.png'
+                    background_color: 0, 0, 0, 0.7
+                    fit_mode: 'fill'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                size_hint: 1, 1
+                Image:
+                    id: img  # enemy image
+                    source: 'assets/images/interrogation_point.png'
+                    fit_mode: 'fill'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            
+            BoxLayout:
+                orientation: 'vertical'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                size_hint: 1, 1
+                XImage:
+                    id: frame
+                    source: 'assets/images/enemy_frame.png'
+                    fit_mode: 'fill'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        
+        FloatLayout:
+            size_hint: 1, 0.2
+            size: root.width, root.height
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                size_hint: 1, 1
+                BackgroundLabel:
+                    id: name  # enemy name
+                    text: '"???"'
+                    font_size: 40
+                    font_name: 'OLDENGL'
+                    size_hint: 1, 1
+                    background_color: 0, 0, 0, 0.5
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+    GridLayout:
+        cols: 1
+        spacing: 30
+        size_hint: 1, 0.25
+        BoxLayout:
+            orientation: 'horizontal'
+            XImage:
+                id: l_icon
+                source:'assets/hud/heart.png'
+                size: self.texture_size
+                size_hint: None, 1
+                width: 50
+                height: 50
+                background_color: 0, 0, 0, 0
+            FloatLayout:
+                XProgressBar:
+                # Enemy Life
+                    id: l_bar
+                    max: 100
+                    value: 100
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    bar_color: 1, 0.3, 0.2, 1
+                BackgroundLabel:
+                    id: l_txt
+                    text: '100/100'
+                    font_size: 25
+                    color: 0, 0, 0, 1
+                    bold: True
+                    size_hint: 1, 1
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        BoxLayout:
+            orientation: 'horizontal'
+            XImage:
+                id: atk_icon
+                source:'assets/hud/sword.png'
+                size: self.texture_size
+                size_hint: None, 1
+                width: 50
+                height: 50
+                background_color: 0, 0, 0, 0
+            Label:
+                id: atk
+                font_size: 25
+                text: '0'  # Enemy Attack
+                text_size: self.size
+                halign: 'left'
+                valign: 'center'
+            XImage:
+                id: deff_icon
+                source:'assets/hud/shield.png'  #shield
+                size: self.texture_size
+                size_hint: None, 1
+                width: 50
+                height: 50
+                background_color: 0, 0, 0, 0
+            Label:
+                id: deff
+                font_size: 25
+                text: '0'  # Enemy Defense
+                text_size: self.size
+                halign: 'left'
+                valign: 'center'

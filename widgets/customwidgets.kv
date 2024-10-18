@@ -1,0 +1,82 @@
+#:kivy 2.3
+<XButton@Button>
+    font_size: 40
+    bold: True
+    background_normal: 'assets/hud/button_normal.png'
+    background_down: 'assets/hud/button_pressed.png'
+    #background_color: 0, 0, 0, 0.5
+    on_press: app.click()
+
+<BackgroundColor@Widget>
+    background_color: 0, 0, 0, 0
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<XImage@Image+BackgroundColor>
+    background_color: 0, 0, 0, 0
+    canvas:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+<BackgroundLabel@Label+BackgroundColor+BoxLayout>
+    BoxLayout:
+        orientation: 'vertical'
+        size: self.width, self.height
+        background_color: 0, 0, 0, 0
+        font_name: 'Gadugi'
+
+<Terminal@ScrollView+BackgroundColor>
+    background_color: 0, 0, 0, 0.5
+
+<InventorySlot@Image>:
+    source: 'assets/hud/slot.png'
+    size_hint: None, None
+    size: self.size
+
+    canvas.before:
+        StencilPush
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [0]
+        StencilUse
+
+    canvas:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            texture: self.texture
+            size: self.size
+            pos: self.pos
+
+    canvas.after:
+        StencilUnUse
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [0]
+        StencilPop
+
+<XProgressBar@ProgressBar>:
+    bar_color: 0, 0, 0, 1
+    canvas:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        
+    canvas.after:
+        Color:
+            rgba: self.bar_color
+        Rectangle:
+            pos: self.pos
+            size: self.width * (self.value / float(self.max)), self.height

@@ -1,0 +1,94 @@
+#:kivy 2.3
+<Game>:
+    XImage:
+        id: imagem
+        source: 'assets/images/interrogation_point.png'
+        size: root.width, root.height
+        #background_color: 0.20, 0.20, 0.15, 0.7
+        background_color: 0, 0, 0, 0.5
+        fit_mode: 'fill'
+
+    BoxLayout:
+    # This layout separates the app title and the actions
+        orientation: 'vertical'
+        size: root.width, root.height
+        padding: 10
+
+        Label:
+            id: title
+            text: 'The'
+            size_hint: 1, 0.1
+            font_size: 50
+            font_name: 'OLDENGL'
+            pos_hint: {'center_x': 0.5, 'top': 0.97}
+        
+        BoxLayout:
+        # This layout is used to separate the player to the enemy
+            orientation: 'horizontal'
+            padding: 0, 10, 0, 10
+            spacing: 10
+
+            BoxLayout:
+            # This layout sepairs the image and the stats (player)
+                id: player
+                orientation: 'vertical'
+                spacing: 10
+                size_hint: 1, 1
+                
+                BoxLayout:
+                    orientation: 'vertical'
+                    
+                    Image:
+                        id: p_img  # player image
+                        source: 'assets/images/interrogation_point.png'
+                        size: self.texture_size
+                        fit_mode: 'fill'
+                    
+                    BackgroundLabel:
+                        id: p_name  # player name
+                        text: '"Jonkler (you)"'
+                        font_size: 40
+                        font_name: 'OLDENGL'
+                        size_hint: 1, 0.2
+                        background_color: 0, 0, 0, 0.5
+                
+                PlayerStats:
+                    id: p_stats  # player stats
+                    size_hint: 1, 0.25
+                    padding: 0, 10, 0, 10
+            Terminal:
+                id: terminal
+                do_scroll_y: True
+                do_scroll_x: False
+                size_hint: 1, 1
+                do_layout: False
+                Label:
+                    id: events
+                    size_hint_y: None
+                    height: self.texture_size[1]  # Ajusta a altura da Label
+                    text_size: self.width, None
+                    halign: 'left'
+                    valign: 'top'
+                    markup: True
+                    font_size: 25
+
+            EnemyStats:
+                id: e_stats  # enemy stats
+                size_hint: 1, 1
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.3
+            spacing: 10
+
+            ActionButtons:
+                id: act_btt  # action buttons
+                size_hint: 0.5, 1
+            
+            Inventory:
+                id: inv
+                size_hint: 0.5, 1
+                
+            OptionButtons:
+                id: opt  # options
+                size_hint: 0.5, 1

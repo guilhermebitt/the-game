@@ -1,0 +1,22 @@
+#:kivy 2.3
+<OptionButtons@GridLayout>:
+    on_kv_post:
+        self.player = self.parent.parent.parent.parent
+    cols: 2
+    rows: 2
+    spacing: 10
+
+    XButton:
+        id: button1
+        text: 'Option1'
+    XButton:
+        id: button2
+        text: 'Option2'
+    XButton:
+        id: Mute
+        text: 'Mute Music'
+        on_press: root.player.mute()
+    XButton:
+        id: exit
+        text: 'Exit'
+        on_press: root.player.back_to_menu()

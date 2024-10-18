@@ -1,0 +1,25 @@
+#:kivy 2.3
+
+<ActionButtons@GridLayout>:
+    on_kv_post:
+        self.player = self.parent.parent.parent.parent
+    cols: 2
+    rows: 2
+    spacing: 10
+
+    XButton:
+        id: atk_button
+        text: 'Attack'
+        on_release: root.player.do_attack()
+    XButton:
+        id: inv_button
+        text: 'Spell (???)'
+        #on_press: root.player.do_spell()
+    XButton:
+        id: endt_button
+        text: 'End Turn'
+        on_release: root.player.endturn()
+    XButton:
+        id: gu_button
+        text: 'Suicide'
+        on_release: root.player.die(None, True, True)

@@ -1,0 +1,33 @@
+#:kivy 2.3
+<MainScreenManager>:
+    # Deines the screens order
+    MenuScreen:
+    OptionsScreen:
+    CutSceneScreen:
+    The:
+    DeathScreen:
+
+<MenuScreen>:
+    name: 'menu'
+    Menu:
+        id: menu
+
+<OptionsScreen>:
+    name: 'options'
+    Options:
+        id: options
+
+<CutSceneScreen>:
+    name: 'cutscene'
+    CutScene:
+        id: cutscene
+
+<The>:
+    name: 'the'
+    Game:
+        id: game
+
+<DeathScreen>:
+    name: 'death'
+    Death:
+        id: death

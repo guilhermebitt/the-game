@@ -1,0 +1,9 @@
+1: enemy
+2: enemy
+3: loot CHECK(???)
+4: enemy
+5: boss CHECK 
+6: event
+
+area 1 (Mud):
+enemies: mud golem, mudskippers

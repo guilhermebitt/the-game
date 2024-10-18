@@ -1,0 +1,9 @@
+TO DO
+- replace enemies.
+- add events to the game.
+
+extra:
+- fix potions description
+- add a confirmation screen for some actions (like discart an item)
+- add a screen to discart some item and save a loot that can't fit in the inventory.
+- maybe a screen to show the info of itens

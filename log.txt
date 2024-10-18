@@ -1,0 +1,23 @@
+| [color=fcba03]Welcome[/color], you need to save our planet againist [color=fcba03]they[/color]!
+| You deal 5 points of damage.
+| You deal 5 points of damage.
+| [color=fcba03]You ended your turn.[/color]
+| The enemy attacked! You take [color=ffffff]5[/color] points of damage.
+| The enemy attacked! You take [color=ffffff]5[/color] points of damage.
+| [color=fcba03]It's your turn.[/color]
+| You deal 5 points of damage.
+| Enemy defeated!
+| You gained 4 coins.
+| [color=#3ca832]You got a weapon! see "info" in your turn for more details.[/color]
+| You deal 7 points of damage.
+| [color=fcba03]You ended your turn.[/color]
+| The enemy casted [FIREBALL]. You take [color=ffffff]17[/color] points of damage.
+| The enemy casted [FIREBALL]. You take [color=ffffff]17[/color] points of damage.
+| The enemy attacked! You take [color=ffffff]10[/color] points of damage.
+| [color=fcba03]It's your turn.[/color]
+| Training Sword: Increases attack of the player by 2 points.
+| [HEAL] recovered 15 HP
+| You deal 7 points of damage.
+| Enemy defeated!
+| You gained 34 coins.
+| 
