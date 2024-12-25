@@ -2,12 +2,12 @@
 game made with kivy to improve my english and my knowledge in python.
 
 ## Purpose
-To do a game in free time, and to haave some fun.
+To do a game in free time, and to have some fun.
 
 The reason I'm doing this is to study more about object-oriented programming (OOP) and the Kivy Framework to start making more useful applications to automate my day-to-day life.
 ***
 ## More About Me
-My name is Guilherme, I have 17 year old and I want to improve my knowledge on programation, then I desire to take a job in this area.
+My name is Guilherme, I'm 17 years old and I want to improve my knowledge on programation, then I desire to take a job in this area.
 
 I'm taking a technical IT course at Senac (Brazilian Technical School) and I'm in the 2nd year of high school.
 
